@@ -1,13 +1,14 @@
-# This file is used to configure Travis CI for a project.
-# It specifies the programming language, environment, and commands to run during the build process.
-
-sudo: required
+language: node_js
+node_js:
+  - "16" # Adjust to your Node.js version
 
 services:
   - docker
 
 before_install:
+  - docker --version
   - docker build -t sandeep199522/docker-react -f Dockerfile.dev .
+  - docker images
 
 script:
   - docker run sandeep199522/docker-react npm run test -- --coverage
