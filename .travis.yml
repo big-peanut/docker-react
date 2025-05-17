@@ -1,3 +1,5 @@
+# This file is used to configure Travis CI for a project.
+
 language: node_js
 node_js:
   - "16" # Adjust to your Node.js version
