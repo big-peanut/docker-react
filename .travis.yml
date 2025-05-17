@@ -1,3 +1,6 @@
+# This file is used to configure Travis CI for a project.
+# It specifies the programming language, environment, and commands to run during the build process.
+
 sudo: required
 
 services:
