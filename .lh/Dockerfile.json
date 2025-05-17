@@ -1,0 +1,26 @@
+{
+    "sourceFile": "Dockerfile",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1746415556901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746415877622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+#BUILD PHASE CONFIG START\r\n+\r\n FROM node:alpine as builder\r\n \r\n WORKDIR /app\r\n \r\n@@ -7,5 +9,15 @@\n RUN npm install\r\n \r\n COPY . .\r\n \r\n-RUN npm run build\n\\ No newline at end of file\n+RUN npm run build\r\n+\r\n+# BUILD PHASE CONFIG END\r\n+\r\n+#RUN PHASE CONFIG START\r\n+\r\n+FROM nginx\r\n+\r\n+COPY --from=builder /app/build /usr/share/nginx/html\r\n+\r\n+#RUN PHASE CONFIG END\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1746416175189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n #BUILD PHASE CONFIG START\r\n \r\n-FROM node:alpine as builder\r\n+FROM node:alpine AS builder\r\n \r\n WORKDIR /app\r\n \r\n COPY package.json .\r\n"
+                }
+            ],
+            "date": 1746415556901,
+            "name": "Commit-0",
+            "content": "FROM node:alpine as builder\r\n\r\nWORKDIR /app\r\n\r\nCOPY package.json .\r\n\r\nRUN npm install\r\n\r\nCOPY . .\r\n\r\nRUN npm run build"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "Dockerfile.dev",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1746155627017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746155645027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n \r\n COPY package.json\r\n RUN npm install\r\n \r\n-COPY ..\r\n+COPY . .\r\n \r\n CMD [\"npm\",\"run\",\"start\"]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1746155910104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n FROM node:alpine\r\n \r\n WORKDIR '/app'\r\n \r\n-COPY package.json\r\n+COPY package.json ./\r\n RUN npm install\r\n \r\n COPY . .\r\n \r\n"
+                }
+            ],
+            "date": 1746155627017,
+            "name": "Commit-0",
+            "content": "FROM node:alpine\r\n\r\nWORKDIR '/app'\r\n\r\nCOPY package.json\r\nRUN npm install\r\n\r\nCOPY ..\r\n\r\nCMD [\"npm\",\"run\",\"start\"]"
+        }
+    ]
+}
